@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>My Account - Agri Gear Rentals</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+      .account-details {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .account-details h3 {
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        color: #007bff;
+      }
+      .account-details .detail-item {
+        margin-bottom: 15px;
+        font-size: 1.1em;
+      }
+      .account-details .detail-label {
+        font-weight: bold;
+        color: #343a40;
+      }
+      .account-details .detail-value {
+        margin-left: 10px;
+        color: #6c757d;
+      }
+      .logout-button {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center my-4">My Account</h2>
+      
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="alert-container">
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="account-details">
+            <h3>Account Details</h3>
+            <div class="detail-item">
+              <span class="detail-label">Full Name:</span>
+              <span class="detail-value">{{ user[0]['full_name'] }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Email:</span>
+              <span class="detail-value">{{ user[0]['email'] }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Aadhar Card Number:</span>
+              <span class="detail-value">{{ user[0]['aadhar_card_number'] }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Address:</span>
+              <span class="detail-value">{{ user[0]['address'] }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Card Details:</span>
+              <span class="detail-value">{{ user[0]['card_details'] }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Phone Number:</span>
+              <span class="detail-value">{{ user[0]['phone_number'] }}</span>
+            </div>
+          </div>
+
+          <div class="text-center logout-button">
+            <a href="{{ url_for('logout') }}" class="btn btn-secondary">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  </body>
+</html>

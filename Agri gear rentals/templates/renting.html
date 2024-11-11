@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>Agri Gear Rentals</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='fonts/icomoon/style.css')}}">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-datepicker.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/jquery.fancybox.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='fonts/flaticon/font/flaticon.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/aos.css')}}">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+  </head>
+
+  <body>
+
+    
+    <div class="site-wrap" id="home-section">
+
+      <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+          <div class="site-mobile-menu-close mt-3">
+            <span class="icon-close2 js-menu-toggle"></span>
+          </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+      </div>
+
+
+
+      <header class="site-navbar site-navbar-target" role="banner">
+
+        <div class="container">
+          <div class="row align-items-center position-relative">
+
+            <div class="col-3">
+              <div class="site-logo">
+                <a href="{{url_for('static', filename='index')}}"><strong>Agri Gear Rentals</strong></a>
+              </div>
+            </div>
+
+            <div class="col-9  text-right">
+              
+              <span class="d-inline-block d-lg-none"><a href="#" class=" site-menu-toggle js-menu-toggle py-5 "><span class="icon-menu h3 text-black"></span></a></span>
+
+              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                  <li><a href="{{url_for('index')}}" class="nav-link">Home</a></li>
+                  <li class="active"><a href="{{url_for('renting')}}" class="nav-link">rent</a></li>
+                  <li><a href="{{url_for('account')}}" class="nav-link">account</a></li>
+                  <li><a href="{{url_for('cart')}}" class="nav-link">cart</a></li>
+                  <li><a href="{{url_for('about')}}" class="nav-link">About</a></li>
+                  <li><a href="{{url_for('contact')}}" class="nav-link">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+
+            
+          </div>
+        </div>
+
+      </header>
+
+      
+      <div class="hero inner-page" style="background-image: url('static/images/tractor');">
+        
+        <div class="container">
+          <div class="row align-items-end ">
+            <div class="col-lg-5">
+
+              <div class="intro">
+                <h1><strong>Rentals</strong></h1>
+                <div class="custom-breadcrumbs"><a href="{{url_for('index')}}">Home</a> <span class="mx-2">/</span> <strong>Renting</strong></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+  
+
+
+
+      
+
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <h2 class="section-heading"><strong>Tool Listings</strong></h2>
+            <p class="mb-5">Here are the tools / equipments available for rent.</p>    
+          </div>
+        </div>
+        
+
+
+
+
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <h2 class="section-heading"><strong>List of tractors</strong></h2>
+            <p class="mb-5">List of few diffrent tractors.</p>    
+          </div>
+        </div>
+        
+
+        <div class="listing d-block align-items-stretch">
+          <div class="listing-img h-100 mr-4">
+            <img src="static/images/Massey Fergusion.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="listing-contents h-100">
+            <h3>Massey Fergusion</h3>
+            <div class="rent-price">
+              <strong>₹1000</strong><span class="mx-1">/</span>day
+            </div>
+            <div>
+              <form action="{{ url_for('add_to_cart') }}" method="POST">
+                <input type="hidden" name="item_name" value="Massey Fergusion">
+                <input type="hidden" name="item_price" value="1000">
+                <input type="hidden" name="item_image" value="static/images/Massey Fergusion.jpg">
+                <button type="submit" class="btn btn-primary btn-sm">Rent Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="listing d-block align-items-stretch">
+          <div class="listing-img h-100 mr-4">
+            <img src="static/images/New Holland.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="listing-contents h-100">
+            <h3>New Holland</h3>
+            <div class="rent-price">
+              <strong>₹1000</strong><span class="mx-1">/</span>day
+            </div>
+            <div>
+              <form action="{{ url_for('add_to_cart') }}" method="POST">
+                <input type="hidden" name="item_name" value="New Holland">
+                <input type="hidden" name="item_price" value="1000">
+                <input type="hidden" name="item_image" value="static/images/New Holland.jpg">
+                <button type="submit" class="btn btn-primary btn-sm">Rent Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="listing d-block align-items-stretch">
+          <div class="listing-img h-100 mr-4">
+            <img src="static/images/Arjun Novo.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="listing-contents h-100">
+            <h3>Arjun Novo</h3>
+            <div class="rent-price">
+              <strong>₹1000</strong><span class="mx-1">/</span>day
+            </div>
+            <div>
+              <form action="{{ url_for('add_to_cart') }}" method="POST">
+                <input type="hidden" name="item_name" value="Arjun Novo">
+                <input type="hidden" name="item_price" value="1000">
+                <input type="hidden" name="item_image" value="static/images/Arjun Novo.jpg">
+                <button type="submit" class="btn btn-primary btn-sm">Rent Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="listing d-block align-items-stretch">
+          <div class="listing-img h-100 mr-4">
+            <img src="static/images/Swaraj.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="listing-contents h-100">
+            <h3>Swaraj</h3>
+            <div class="rent-price">
+              <strong>₹1000</strong><span class="mx-1">/</span>day
+            </div>
+            <div>
+              <form action="{{ url_for('add_to_cart') }}" method="POST">
+                <input type="hidden" name="item_name" value="Swaraj">
+                <input type="hidden" name="item_price" value="1000">
+                <input type="hidden" name="item_image" value="static/images/Swaraj.jpg">
+                <button type="submit" class="btn btn-primary btn-sm">Rent Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="listing d-block align-items-stretch">
+          <div class="listing-img h-100 mr-4">
+            <img src="static/images/Small Tractor.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="listing-contents h-100">
+            <h3>Small Tractor</h3>
+            <div class="rent-price">
+              <strong>₹500</strong><span class="mx-1">/</span>day
+            </div>
+            <div>
+              <form action="{{ url_for('add_to_cart') }}" method="POST">
+                <input type="hidden" name="item_name" value="Small Tractor">
+                <input type="hidden" name="item_price" value="500">
+                <input type="hidden" name="item_image" value="static/images/Small Tractor.jpg">
+                <button type="submit" class="btn btn-primary btn-sm">Rent Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+          
+  <h4><p>These are some of other tools which can be attached to tractor</p></h4>
+          
+  <div class="listing d-block align-items-stretch">
+    <div class="listing-img h-100 mr-4">
+      <img src="static/images/Plough.jpg" alt="Image" class="img-fluid">
+    </div>
+    <div class="listing-contents h-100">
+      <h3>Plough</h3>
+      <div class="rent-price">
+        <strong>₹400</strong><span class="mx-1">/</span>day
+      </div>
+      <div>
+        <form action="{{ url_for('add_to_cart') }}" method="POST">
+          <input type="hidden" name="item_name" value="Plough">
+          <input type="hidden" name="item_price" value="400">
+          <input type="hidden" name="item_image" value="static/images/Plough.jpg">
+          <button type="submit" class="btn btn-primary btn-sm">Rent Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="listing d-block align-items-stretch">
+    <div class="listing-img h-100 mr-4">
+      <img src="static/images/Baler.jpg" alt="Image" class="img-fluid">
+    </div>
+    <div class="listing-contents h-100">
+      <h3>Baler</h3>
+      <div class="rent-price">
+        <strong>₹400</strong><span class="mx-1">/</span>day
+      </div>
+      <div>
+        <form action="{{ url_for('add_to_cart') }}" method="POST">
+          <input type="hidden" name="item_name" value="Baler">
+          <input type="hidden" name="item_price" value="400">
+          <input type="hidden" name="item_image" value="static/images/Baler.jpg">
+          <button type="submit" class="btn btn-primary btn-sm">Rent Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="listing d-block align-items-stretch">
+    <div class="listing-img h-100 mr-4">
+      <img src="static/images/Mulcher.jpg" alt="Image" class="img-fluid">
+    </div>
+    <div class="listing-contents h-100">
+      <h3>Mulcher</h3>
+      <div class="rent-price">
+        <strong>₹400</strong><span class="mx-1">/</span>day
+      </div>
+      <div>
+        <form action="{{ url_for('add_to_cart') }}" method="POST">
+          <input type="hidden" name="item_name" value="Mulcher">
+          <input type="hidden" name="item_price" value="400">
+          <input type="hidden" name="item_image" value="static/images/Mulcher.jpg">
+          <button type="submit" class="btn btn-primary btn-sm">Rent Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+ <div class="listing d-block align-items-stretch">
+          <div class="listing-img h-100 mr-4">
+            <img src="static/images/Seeder.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="listing-contents h-100">
+            <h3>Seeder</h3>
+            <div class="rent-price">
+              <strong>₹400</strong><span class="mx-1">/</span>day
+            </div>
+            <div>
+              <form action="{{ url_for('add_to_cart') }}" method="POST">
+                <input type="hidden" name="item_name" value="Seeder">
+                <input type="hidden" name="item_price" value="400">
+                <input type="hidden" name="item_image" value="static/images/Seeder.jpg">
+                <button type="submit" class="btn btn-primary btn-sm">Rent Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="listing d-block align-items-stretch">
+          <div class="listing-img h-100 mr-4">
+            <img src="static/images/Rotavator.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="listing-contents h-100">
+            <h3>Rotavator</h3>
+            <div class="rent-price">
+              <strong>₹400</strong><span class="mx-1">/</span>day
+            </div>
+            <div>
+              <form action="{{ url_for('add_to_cart') }}" method="POST">
+                <input type="hidden" name="item_name" value="Rotavator">
+                <input type="hidden" name="item_price" value="400">
+                <input type="hidden" name="item_image" value="static/images/Rotavator.jpg">
+                <button type="submit" class="btn btn-primary btn-sm">Rent Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="listing d-block align-items-stretch">
+          <div class="listing-img h-100 mr-4">
+            <img src="static/images/Tractor Digger.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="listing-contents h-100">
+            <h3>Digger</h3>
+            <div class="rent-price">
+              <strong>₹500</strong><span class="mx-1">/</span>day
+            </div>
+            <div>
+              <form action="{{ url_for('add_to_cart') }}" method="POST">
+                <input type="hidden" name="item_name" value="Digger">
+                <input type="hidden" name="item_price" value="500">
+                <input type="hidden" name="item_image" value="static/images/Tractor Digger.jpg">
+                <button type="submit" class="btn btn-primary btn-sm">Rent Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <h4><p>These are some of other tools</p></h4>
+
+        <div class="listing d-block align-items-stretch">
+          <div class="listing-img h-100 mr-4">
+            <img src="static/images/Handheld Digger.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="listing-contents h-100">
+            <h3>Handheld Digger</h3>
+            <div class="rent-price">
+              <strong>₹300</strong><span class="mx-1">/</span>day
+            </div>
+            <div>
+              <form action="{{ url_for('add_to_cart') }}" method="POST">
+                <input type="hidden" name="item_name" value="Handheld Digger">
+                <input type="hidden" name="item_price" value="300">
+                <input type="hidden" name="item_image" value="static/images/HandHeld Digger.jpg">
+                <button type="submit" class="btn btn-primary btn-sm">Rent Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="listing d-block align-items-stretch">
+          <div class="listing-img h-100 mr-4">
+            <img src="static/images/Bush Cutter.jpg" alt="Image" class="img-fluid">
+          </div>
+          <div class="listing-contents h-100">
+            <h3>Bush Cutter</h3>
+            <div class="rent-price">
+              <strong>₹200</strong><span class="mx-1">/</span>day
+            </div>
+            <div>
+              <form action="{{ url_for('add_to_cart') }}" method="POST">
+                <input type="hidden" name="item_name" value="Bush Cutter">
+                <input type="hidden" name="item_price" value="200">
+                <input type="hidden" name="item_image" value="static/images/Bush Cutter.jpg">
+                <button type="submit" class="btn btn-primary btn-sm">Rent Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+    <script src="{{url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.sticky.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.animateNumber.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.fancybox.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/jquery.easing.1.3.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/aos.js')}}"></script>
+
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+  </body>
+
+</html>
+
